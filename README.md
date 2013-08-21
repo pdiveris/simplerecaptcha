@@ -124,7 +124,7 @@ Route::get("form", function()
 {
     
     $html = "<form action='check' method='POST'>";
-    $html.= Simplerecaptcha::recaptcha_get_html();
+    $html.= Form::recaptcha();
     $html.= "<input type='submit'>";
     
     echo $html; 
