@@ -1,6 +1,8 @@
 {
     "name": "unodepiera/simplerecaptcha",
-    "description": "",
+    "description": "Simple recaptcha for laravel 4",
+    "keywords": ["L4", "Laravel 4", "Laravel", "recaptcha", "security", "recaptcha image", "unodepiera recaptcha"],
+    "homepage": "http://uno-de-piera.com/",
     "authors": [
         {
             "name": "unodepiera",
