@@ -1,6 +1,6 @@
-<h1>SimpleRecaptcha for Laravel 4</h1>
-<h1>Installation</h1>
-<p>Open your composer.json and add the next code</p>
+## SimpleRecaptcha for Laravel 4
+## Installation
+Open your composer.json and add the next code
 ```json
 {
 	"require": {
@@ -10,16 +10,16 @@
 	"minimum-stability": "dev"
 }
 ```
-<p>Update your packages with composer update or install with composer install.</p>
-<h1>Usage</h1>
-<p>Find the providers key in app/config/app.php and register the Simplecart Service Provider.</p>
+Update your packages with ```composer update``` or install with ```composer install```.
+## Usage
+Find the providers key in app/config/app.php and register the Simplecart Service Provider.
 ```json
 	'providers' => array(
         //...
         'Unodepiera\Simplerecaptcha\SimplerecaptchaServiceProvider'
     )
 ```
-<p>Find the aliases key in app/config/app.php.</p>
+Find the aliases key in app/config/app.php.
 ```json
 	'aliases' => array(
         //...
@@ -27,9 +27,13 @@
     )
 ```
 
-<h1>Example Usage SimpleRecaptcha</h1>
+Publish config with this command. 
 
-<p>Settings</p>
+```$ php artisan asset:publish unodepiera/simplerecaptcha```
+
+## Example Usage SimpleRecaptcha
+
+Settings
 ```php
 return array(
 
@@ -108,7 +112,7 @@ return array(
 
 );
 ```
-<h1>Usage
+## Usage
 ```php
 Route::get("form", function()
 {
