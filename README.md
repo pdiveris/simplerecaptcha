@@ -29,7 +29,7 @@ Find the aliases key in app/config/app.php.
 
 Publish config with this command. 
 
-```$ php artisan asset:publish unodepiera/simplerecaptcha```
+```$ php artisan config:publish unodepiera/simplerecaptcha```
 
 ## Example Usage SimpleRecaptcha
 
