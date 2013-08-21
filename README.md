@@ -11,7 +11,7 @@ Open your composer.json and add the next code
 }
 ```
 Update your packages with ```composer update``` or install with ```composer install```.
-## Usage
+
 Find the providers key in app/config/app.php and register the Simplecart Service Provider.
 ```json
 	'providers' => array(
