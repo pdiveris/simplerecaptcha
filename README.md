@@ -38,14 +38,14 @@ return array(
     | Set the public keys as provided by reCAPTCHA.
     */
 
-    'public_key'    =>      '6LeOYOYSAAAAAEgcEf9Hpby7QohtV9sPO59b7PY0',
+    'public_key'    =>      '',
 
 
     /*
     | Set the public keys as provided by reCAPTCHA.
     */
 
-    'private_key'   =>      '6LeOYOYSAAAAALhGvPGkT3E1w_Zu055jVaycnBXB',
+    'private_key'   =>      '',
 
 
     /*
