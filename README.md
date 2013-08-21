@@ -37,7 +37,7 @@ If you need keys recaptcha api go here.
 
 * [Recaptcha keys](https://www.google.com/recaptcha/admin/create)
 
-Then set the config file with keys provides from recaptcha.
+Then set the config file with keys provides from recaptcha, the file config is saved in the directory app\config\packages\unodepiera\simplerecaptcha\config.php after publication.
 
 Configuration
 ```php
