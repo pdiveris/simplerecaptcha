@@ -20,7 +20,9 @@ class SimplerecaptchaServiceProvider extends ServiceProvider {
 	{
 		$this->package('unodepiera/simplerecaptcha');
 		require __DIR__ . '/validation.php';
+		$this->recaptchaMacro();
 	}
+
 
 	/**
 	 * Register the service provider.
@@ -33,6 +35,21 @@ class SimplerecaptchaServiceProvider extends ServiceProvider {
 			return new Simplerecaptcha;
 		});
 	}
+
+	/**
+	* Recaptcha macro for forms, now can call Form::recaptcha();
+	**/
+	public function recaptchaMacro()
+	{
+		
+		$this->app['form']->macro('recaptcha', function($options = array())
+		{
+			$re = new Simplerecaptcha;
+			return $re->recaptcha_get_html();
+		});
+		
+	}
+
 
 	/**
 	 * Get the services provided by the provider.
