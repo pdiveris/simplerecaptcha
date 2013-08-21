@@ -33,7 +33,13 @@ Publish config with this command.
 
 ## Example Usage SimpleRecaptcha
 
-Settings
+If you need keys recaptcha api go here.
+
+* [Recaptcha keys](https://www.google.com/recaptcha/admin/create)
+
+Then set the config file with keys provides from recaptcha.
+
+Configuration
 ```php
 return array(
 
