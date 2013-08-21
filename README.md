@@ -140,6 +140,6 @@ Route::post("check", function()
 ## Visit me
 
 * [Visit me](http://uno-de-piera.com)
-* [SimpleCart on Packagist](https://packagist.org/packages/unodepiera/simplecart)
+* [SimpleRecaptcha on Packagist](https://packagist.org/packages/unodepiera/simplerecaptcha)
 * [License](http://www.opensource.org/licenses/mit-license.php)
 * [Laravel website](http://laravel.com)-
