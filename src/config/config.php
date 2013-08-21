@@ -72,7 +72,7 @@ return array(
 	/*
 	| Set the message incorrect text reCAPTCHA.
 	*/
-	'incorrect_try_again'	=>		'Incorrect. Try again',
+	'incorrect_try_again'	=>		'Incorrect. Try again.',
 
 
 );
