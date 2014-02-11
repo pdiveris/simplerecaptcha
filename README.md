@@ -5,7 +5,7 @@ Open your composer.json and add the next code
 {
 	"require": {
 	    "laravel/framework": "4.1.*",
-	    "unodepiera/simplerecaptcha": "dev-master"
+	    "bentleysoft/simplerecaptcha": "dev-master"
 	},
 	"minimum-stability": "dev"
 }
@@ -16,14 +16,14 @@ Find the providers key in app/config/app.php and register the Simplecart Service
 ```json
 	'providers' => array(
         //...
-        'Unodepiera\Simplerecaptcha\SimplerecaptchaServiceProvider'
+        'Bentleysoft\Simplerecaptcha\SimplerecaptchaServiceProvider'
     )
 ```
 Find the aliases key in app/config/app.php.
 ```json
 	'aliases' => array(
         //...
-        'Simplerecaptcha' => 'Unodepiera\Simplerecaptcha\Facades\Simplerecaptcha',
+        'Simplerecaptcha' => 'Bentleysoft\Simplerecaptcha\Facades\Simplerecaptcha',
     )
 ```
 
@@ -145,7 +145,6 @@ Route::post("check", function()
 
 ## Visit me
 
-* [Visit me](http://uno-de-piera.com)
-* [SimpleRecaptcha on Packagist](https://packagist.org/packages/unodepiera/simplerecaptcha)
+* [Visit me](http://www.diveris.org)
 * [License](http://www.opensource.org/licenses/mit-license.php)
 * [Laravel website](http://laravel.com)-
