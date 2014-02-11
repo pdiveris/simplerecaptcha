@@ -1,6 +1,8 @@
 <?php
 return array(
-
+	/* 
+	| simple recaptcha config
+	*/
 
 	/*
 	| Set the public keys as provided by reCAPTCHA.

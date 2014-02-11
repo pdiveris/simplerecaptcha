@@ -1,17 +1,17 @@
 {
     "name": "unodepiera/simplerecaptcha",
     "description": "Simple recaptcha for laravel 4",
-    "keywords": ["L4", "Laravel 4", "Laravel", "recaptcha", "security", "recaptcha image", "unodepiera recaptcha"],
-    "homepage": "http://uno-de-piera.com/",
+    "keywords": ["L41", "Laravel 4.1", "Laravel", "recaptcha", "security", "recaptcha image", "unodepiera recaptcha"],
+    "homepage": "http://www.diveris.org/",
     "authors": [
         {
-            "name": "unodepiera",
-            "email": "unodepiera@uno-de-piera.com"
+            "name": "petros diveris",
+            "email": "petros@diveris.org"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.0.x"
+        "illuminate/support": "4.1.x"
     },
     "autoload": {
         "classmap": [
