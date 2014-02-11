@@ -18,7 +18,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Unodepiera\\Simplerecaptcha": "src/"
+            "Bentleysoft\\Simplerecaptcha": "src/"
         }
     },
     "minimum-stability": "dev"

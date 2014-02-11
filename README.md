@@ -4,7 +4,7 @@ Open your composer.json and add the next code
 ```json
 {
 	"require": {
-	    "laravel/framework": "4.0.*",
+	    "laravel/framework": "4.1.*",
 	    "unodepiera/simplerecaptcha": "dev-master"
 	},
 	"minimum-stability": "dev"
