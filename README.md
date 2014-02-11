@@ -29,7 +29,7 @@ Find the aliases key in app/config/app.php.
 
 Publish config with this command. 
 
-```$ php artisan config:publish unodepiera/simplerecaptcha```
+```$ php artisan config:publish bentleysoft/simplerecaptcha```
 
 ## Example Usage SimpleRecaptcha
 
@@ -37,7 +37,7 @@ If you need keys recaptcha api go here.
 
 * [Recaptcha keys](https://www.google.com/recaptcha/admin/create)
 
-Then set the config file with keys provides from recaptcha, the file config is saved in the directory app\config\packages\unodepiera\simplerecaptcha\config.php after publication.
+Then set the config file with keys provides from recaptcha, the file config is saved in the directory app\config\packages\bentleysoft\simplerecaptcha\config.php after publication.
 
 Configuration
 ```php
