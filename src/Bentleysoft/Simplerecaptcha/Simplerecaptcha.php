@@ -7,11 +7,12 @@ use Config, Input, Request;
 /**
  *
  * Laravel 4 Simplerecaptcha package
- * @version 1.0.0
- * @copyright Copyright (c) 2013 Unodepiera
- * @author Israel Parra
- * @contact unodepiera@uno-de-piera.com
- * @link http://www.uno-de-piera.com
+ * @version 0.0.1
+ * @copyright Copyright (c) 2014 Petros Diveris
+ * @author Petros Diveris (fork)
+ * @author Israel Parra (original)
+ * @contact petros@diveris.org
+ * @link http://www.diveris.org
  * @date 2013-03-27
  * @license http://www.opensource.org/licenses/mit-license.php The MIT License
  *
