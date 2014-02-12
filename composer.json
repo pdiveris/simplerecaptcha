@@ -1,5 +1,5 @@
 {
-    "name": "unodepiera/simplerecaptcha",
+    "name": "bentleysoft/simplerecaptcha",
     "description": "Simple recaptcha for laravel 4",
     "keywords": ["L41", "Laravel 4.1", "Laravel", "recaptcha", "security", "recaptcha image", "unodepiera recaptcha"],
     "homepage": "http://www.diveris.org/",
