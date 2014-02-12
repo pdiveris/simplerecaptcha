@@ -5,9 +5,25 @@ Open your composer.json and add the next code
 {
 	"require": {
 	    "laravel/framework": "4.1.*",
-	    "bentleysoft/simplerecaptcha": "dev-master"
+        "bentleysoft/simplerecaptcha": "master",
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "dev",
+    ...
+    "repositories": [
+        {
+            "type": "package",
+                "package": {
+                    "name": "bentleysoft/simplerecaptcha",
+                    "version": "master",
+                    "source": {
+                        "url": "https://github.com/pdiveris/simplerecaptcha.git",
+                        "type": "git",
+                        "reference": "master"
+                    }
+                }
+        }
+    ],  
+    ...
 }
 ```
 Update your packages with ```composer update``` or install with ```composer install```.
