@@ -6,7 +6,7 @@ use Config, Input, Request;
 
 /**
  *
- * Laravel 4 Simplerecaptcha package
+ * Laravel 4.1 Simplerecaptcha package
  * @version 0.0.1
  * @copyright Copyright (c) 2014 Petros Diveris
  * @author Petros Diveris (fork)
@@ -47,13 +47,13 @@ class Simplerecaptcha
 	 */
 	private function _recaptcha_qsencode($data) 
 	{
-	    $req = "";
-	    foreach ( $data as $key => $value )
-	        $req .= $key . '=' . urlencode( stripslashes($value) ) . '&';
+		$req = "";
+		foreach ( $data as $key => $value )
+			$req .= $key . '=' . urlencode( stripslashes($value) ) . '&';
 
-	    // Cut the last '&'
-	    $req=substr($req,0,strlen($req)-1);
-	    return $req;
+		// Cut the last '&'
+		$req=substr($req,0,strlen($req)-1);
+		return $req;
 	}
 
 	/**
@@ -67,29 +67,29 @@ class Simplerecaptcha
 	 */
 	private function _recaptcha_http_post($host, $path, $data, $port = 80) {
 
-	    $req = $this->_recaptcha_qsencode ($data);
+		$req = $this->_recaptcha_qsencode ($data);
 
-	    $http_request  = "POST $path HTTP/1.0\r\n";
-	    $http_request .= "Host: $host\r\n";
-	    $http_request .= "Content-Type: application/x-www-form-urlencoded;\r\n";
-	    $http_request .= "Content-Length: " . strlen($req) . "\r\n";
-	    $http_request .= "User-Agent: reCAPTCHA/PHP\r\n";
-	    $http_request .= "\r\n";
-	    $http_request .= $req;
+		$http_request  = "POST $path HTTP/1.0\r\n";
+		$http_request .= "Host: $host\r\n";
+		$http_request .= "Content-Type: application/x-www-form-urlencoded;\r\n";
+		$http_request .= "Content-Length: " . strlen($req) . "\r\n";
+		$http_request .= "User-Agent: reCAPTCHA/PHP\r\n";
+		$http_request .= "\r\n";
+		$http_request .= $req;
 
-	    $response = '';
-	    if( false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
-	        die ('Could not open socket');
-	    }
+		$response = '';
+		if( false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
+			die ('Could not open socket');
+		}
 
-	    fwrite($fs, $http_request);
+		fwrite($fs, $http_request);
 
-	    while (!feof($fs))
-	        $response .= fgets($fs, 1160); // One TCP-IP packet
-	        fclose($fs);
-	        $response = explode("\r\n\r\n", $response, 2);
+		while (!feof($fs))
+			$response .= fgets($fs, 1160); // One TCP-IP packet
+			fclose($fs);
+			$response = explode("\r\n\r\n", $response, 2);
 
-	        return $response;
+			return $response;
 	}
 
 
@@ -110,39 +110,39 @@ class Simplerecaptcha
 		}
 		
 		if ($use_ssl) {
-	                $this->server = $this->recaptcha_api_secure_server;
-	        } else {
-	                $this->server = $this->recaptcha_api_server;
-	        }
+					$this->server = $this->recaptcha_api_secure_server;
+			} else {
+					$this->server = $this->recaptcha_api_server;
+			}
 
-	        $errorpart = "";
-	        if ($error) {
-	           $this->errorpart = "&amp;error=" . $error;
-	        }
+			$errorpart = "";
+			if ($error) {
+			   $this->errorpart = "&amp;error=" . $error;
+			}
 
-	        $js = '<script type="text/javascript">';
-	        $js .= 'var RecaptchaOptions = {';
-	        $js .= 'theme: "'.Config::get('simplerecaptcha::theme').'",';
-	        $js .= 'custom_translations : { ';
-	        $js .= 'instructions_visual : "'.Config::get('simplerecaptcha::textfield').'",';
-	        $js .= 'instructions_audio : "'.Config::get('simplerecaptcha::soundfield').'",';  
-	        $js .= 'play_again : "'.Config::get('simplerecaptcha::play_again').'",';
-            $js .= 'visual_challenge : "'.Config::get('simplerecaptcha::visual_challenge').'",';
-            $js .= 'audio_challenge : "'.Config::get('simplerecaptcha::audio_challenge').'",';
-            $js .= 'refresh_btn : "'.Config::get('simplerecaptcha::refresh_btn').'",';
-            $js .= 'help_btn : "'.Config::get('simplerecaptcha::help_btn').'",';
-            $js .= 'incorrect_try_again : "'.Config::get('simplerecaptcha::incorrect_try_again').'"'; 
-	        $js .= '},';
-	        $js .= '};';
-	        $js .= '</script>';
-	        $js .= ' <script type="text/javascript" src="'. $this->server . '/challenge?k=' . Config::get('simplerecaptcha::public_key') . $this->errorpart . '"></script>';
-	        $js .= '<noscript>';
-	        $js .= '<iframe src="'. $this->server . '/noscript?k=' . Config::get('simplerecaptcha::public_key') . $this->errorpart . '" height="300" width="500" frameborder="0"></iframe><br/>';
-	        $js .= '<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>';
-	        $js .= '<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>';
-	        $js .= '</noscript>';
-	        
-	        return $js;
+			$js = '<script type="text/javascript">';
+			$js .= 'var RecaptchaOptions = {';
+			$js .= 'theme: "'.Config::get('simplerecaptcha::theme').'",';
+			$js .= 'custom_translations : { ';
+			$js .= 'instructions_visual : "'.Config::get('simplerecaptcha::textfield').'",';
+			$js .= 'instructions_audio : "'.Config::get('simplerecaptcha::soundfield').'",';  
+			$js .= 'play_again : "'.Config::get('simplerecaptcha::play_again').'",';
+			$js .= 'visual_challenge : "'.Config::get('simplerecaptcha::visual_challenge').'",';
+			$js .= 'audio_challenge : "'.Config::get('simplerecaptcha::audio_challenge').'",';
+			$js .= 'refresh_btn : "'.Config::get('simplerecaptcha::refresh_btn').'",';
+			$js .= 'help_btn : "'.Config::get('simplerecaptcha::help_btn').'",';
+			$js .= 'incorrect_try_again : "'.Config::get('simplerecaptcha::incorrect_try_again').'"'; 
+			$js .= '},';
+			$js .= '};';
+			$js .= '</script>';
+			$js .= ' <script type="text/javascript" src="'. $this->server . '/challenge?k=' . Config::get('simplerecaptcha::public_key') . $this->errorpart . '"></script>';
+			$js .= '<noscript>';
+			$js .= '<iframe src="'. $this->server . '/noscript?k=' . Config::get('simplerecaptcha::public_key') . $this->errorpart . '" height="300" width="500" frameborder="0"></iframe><br/>';
+			$js .= '<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>';
+			$js .= '<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>';
+			$js .= '</noscript>';
+			
+			return $js;
 	}
    
 
@@ -164,32 +164,32 @@ class Simplerecaptcha
 			die ("For security reasons, you must pass the remote ip to reCAPTCHA");
 		}
 	
-        if ($challenge == null || strlen($challenge) == 0 || $response == null || strlen($response) == 0) {
-                $this->is_valid = false;
-                $this->error = 'incorrect-captcha-sol';
-                return $this;
-        }
+		if ($challenge == null || strlen($challenge) == 0 || $response == null || strlen($response) == 0) {
+				$this->is_valid = false;
+				$this->error = 'incorrect-captcha-sol';
+				return $this;
+		}
 
-        $response = $this->_recaptcha_http_post(
-        					$this->recaptcha_verify_server, "/recaptcha/api/verify",
-                            array(
-                                'privatekey' 	=> Config::get('simplerecaptcha::private_key'),
-                                'remoteip' 		=> $remoteip,
-                                'challenge' 	=> $challenge,
-                                'response' 		=> $response,
-                            )
-                        );
+		$response = $this->_recaptcha_http_post(
+							$this->recaptcha_verify_server, "/recaptcha/api/verify",
+							array(
+								'privatekey' 	=> Config::get('simplerecaptcha::private_key'),
+								'remoteip' 		=> $remoteip,
+								'challenge' 	=> $challenge,
+								'response' 		=> $response,
+							)
+						);
 
-        $answers = explode ("\n", $response [1]);
+		$answers = explode ("\n", $response [1]);
 
-        if (trim ($answers [0]) == 'true') {
-                $this->is_valid = true;
-        }
-        else {
-                $this->is_valid = false;
-                $this->error = $answers [1];
-        }
-        return $this;
+		if (trim ($answers [0]) == 'true') {
+				$this->is_valid = true;
+		}
+		else {
+				$this->is_valid = false;
+				$this->error = $answers [1];
+		}
+		return $this;
 
 	}
 
@@ -201,18 +201,18 @@ class Simplerecaptcha
 	**/
 	public function check($recaptcha)
 	{
-        $resp = $this->recaptcha_check_answer(
-            Request::getClientIp(),
-            Input::get("recaptcha_challenge_field"),
-            Input::get("recaptcha_response_field")
-        );
-        
-	    if(!$resp->is_valid)
-	    {
-	     	return false;
-	    }
+		$resp = $this->recaptcha_check_answer(
+			Request::getClientIp(),
+			Input::get("recaptcha_challenge_field"),
+			Input::get("recaptcha_response_field")
+		);
+		
+		if(!$resp->is_valid)
+		{
+			return false;
+		}
 
-	    return true;            
+		return true;            
 	}
 
 }
